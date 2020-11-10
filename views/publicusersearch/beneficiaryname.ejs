@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/header.ejs') %>
+
+    <script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
+    <script>
+       $(document).ready(function () {
+      
+        $('#Beneficiary_name_label').hide();
+        $('input#Beneficiary_name').hide();
+        $('input:radio[name="beneficiaryname"]').change(
+        function(){
+        if ($(this).is(':checked') && $(this).val() == 'yes') {
+          $('#Beneficiary_name_label').show();
+          $('#Beneficiary_name').show();
+        }
+
+        if ($(this).is(':checked') && $(this).val() == 'no') {
+          $('#Beneficiary_name_label').hide();
+          $('#Beneficiary_name').hide();
+        }
+    });
+        
+  });
+  </script> 
+    
+    <div class="govuk-width-container ">
+      <%- include('../partials/banner.ejs') %>
+      <main class="govuk-main-wrapper " id="main-content" role="main">       
+        <form action="/subsidyobjective" method="POST" > 
+       <div class="govuk-breadcrumbs ">
+         <ol class="govuk-breadcrumbs__list">
+           <li class="govuk-breadcrumbs__list-item">
+             <a class="govuk-breadcrumbs__link" href="/Home">Home</a>
+           </li>
+           <li class="govuk-breadcrumbs__list-item">
+             <a class="govuk-breadcrumbs__link" href="/Searchsubsidyaward">Search subsidy awards</a>
+           </li>
+         </ol>
+       </div>
+     
+
+     
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <br /> 
+                <h1 class="govuk-fieldset__heading">
+                    Do you know the beneficiary name?
+                </h1>
+              </legend>
+
+              <label class="govuk-label" for="beneficiarynamelabel">
+                Explanation text for subsidy measure title helping user provide the context.Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
+              </label>
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="beneficiarynameyes" name="beneficiaryname" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="beneficiaryname">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-form-group govuk-form-group--grey">
+                    <span class="govuk-label" id="Beneficiary_name_label" >
+                      Enter beneficiary name
+                    </span>
+                    <input class="govuk-input govuk-input--width-20 govuk-input--grey" id="Beneficiary_name" name="Beneficiary_name" type="text" aria-describedby="Beneficiary_name-hint Beneficiary_name-grey">
+                  </div>
+                    
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="beneficiarynameno" name="beneficiaryname" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="beneficiarynameno">
+                    No
+                  </label>
+                </div>
+               
+              </div>
+          
+            </fieldset>
+          </div>
+        
+        <div>
+        
+            <button class="govuk-button" data-module="govuk-button">
+            Continue </button>
+              
+        </div>
+      </form>  
+
+      </main>
+    </div>
+
+      <%- include('../partials/footer.ejs') %>
+
+</html>
+    

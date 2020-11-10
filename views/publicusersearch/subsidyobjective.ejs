@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/header.ejs') %>
+    
+    <script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
+    <script>
+       $(document).ready(function () {
+      
+        $('#Subsidy_objective_label').hide();
+        $('input#Subsidy_Objective').hide();
+        $('input:radio[name="subsidyobjective"]').change(
+        function(){
+        if ($(this).is(':checked') && $(this).val() == 'Other') {
+          $('#Subsidy_objective_label').show();
+          $('#Subsidy_Objective').show();
+        }
+
+        else {
+          $('#Subsidy_objective_label').hide();
+          $('#Subsidy_Objective').hide();
+        }
+    });
+        
+  });
+  </script> 
+
+    <div class="govuk-width-container ">
+      <%- include('../partials/banner.ejs') %>
+    <main class="govuk-main-wrapper " id="main-content" role="main">       
+    <form action="/spendingregion" method="POST" > 
+       <div class="govuk-breadcrumbs ">
+         <ol class="govuk-breadcrumbs__list">
+           <li class="govuk-breadcrumbs__list-item">
+             <a class="govuk-breadcrumbs__link" href="/Home">Home</a>
+           </li>
+           <li class="govuk-breadcrumbs__list-item">
+             <a class="govuk-breadcrumbs__link" href="/Searchsubsidyaward">Search subsidy awards</a>
+           </li>
+         </ol>
+       </div>
+     
+
+     
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                 <br /> 
+                <h1 class="govuk-fieldset__heading">
+                    Select a subsidy objective for which you want to search
+                </h1>
+              </legend>
+
+              <label class="govuk-label" for="subsidyobjectivelabel">
+                Explanation text for subsidy measure title helping user provide the context.Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
+              </label>
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="subsidyobjective-research-and-development" name="subsidyobjective" type="radio" value="Research-and-development">
+                  <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                    Research and development
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Environmental-protection" name="subsidyobjective" type="radio" value="Environmental-protection">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Environmental protection
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Energy-efficiency" name="subsidyobjective" type="radio" value="Energy-efficiency">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Energy efficiency
+                    </label>
+                  </div>   
+  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Culture-Heritage" name="subsidyobjective" type="radio" value="Culture-Heritage">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Culture/Heritage
+                    </label>
+                  </div> 
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-SME-support" name="subsidyobjective" type="radio" value="SME-support">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      SME support
+                    </label>
+                  </div> 
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Regional-development" name="subsidyobjective" type="radio" value="Regional-development">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Regional development
+                    </label>
+                  </div> 
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Training" name="subsidyobjective" type="radio" value="Training">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Training
+                    </label>
+                  </div> 
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Employment" name="subsidyobjective" type="radio" value="Employment">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Employment
+                    </label>
+                  </div>  
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Infrastructure" name="subsidyobjective" type="radio" value="Infrastructure">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Infrastructure
+                    </label>
+                  </div> 
+                  
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-Rescue-aid" name="subsidyobjective" type="radio" value="Rescue-aid">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Rescue aid
+                    </label>
+                  </div>     
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="subsidyobjective-other" name="subsidyobjective" type="radio" value="Other">
+                    <label class="govuk-label govuk-radios__label" for="subsidyobjective">
+                      Other
+                    </label>
+                  </div>     
+                  
+                  <div class="govuk-form-group govuk-form-group--grey">
+                    <span class="govuk-label" id="Subsidy_objective_label" >
+                      Enter the subsidy objective you want to search by
+                    </span>
+                    <input class="govuk-input govuk-input--width-20 govuk-input--grey" id="Subsidy_Objective" name="Subsidy_Objective" type="text" aria-describedby="Subsidy_Objective-hint Subsidy_Objective-grey">
+                  </div>
+              </div>
+          
+            </fieldset>
+          </div>
+        
+        <div>
+            
+            <button class="govuk-button" data-module="govuk-button">
+            Continue </button>
+         </form>         
+        </div>
+     
+
+      </main>
+    </div>
+
+      <%- include('../partials/footer.ejs') %>
+
+</html>
+    

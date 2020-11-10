@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/header.ejs') %>
+    
+    <div class="govuk-width-container ">
+      <%- include('../partials/banner.ejs') %>
+      <main class="govuk-main-wrapper " id="main-content" role="main">       
+       <div class="govuk-breadcrumbs ">
+         <ol class="govuk-breadcrumbs__list">
+           <li class="govuk-breadcrumbs__list-item">
+             <a class="govuk-breadcrumbs__link" href="/Home">Home</a>
+           </li>
+           <li class="govuk-breadcrumbs__list-item">
+             <a class="govuk-breadcrumbs__link" href="/Searchsubsidyaward">Search subsidy awards</a>
+           </li>
+         </ol>
+       </div>
+     
+
+        <br />
+         <h1 class="govuk-heading-xl">Search subsidy awards</h1>
+         <label class="govuk-label" for="search-contents">Contents  </label> 
+         <label class="govuk-label" for="search-contents-whatissubsidy">- What is a subsidy award </label>
+         <a href="#" class="govuk-label" >- Content heading 2</a>
+         <br />
+         <a href="#" class="govuk-label">- Content heading 3</a>
+        <br />
+         <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <hr />
+            <h2 class="govuk-heading-l">What is a subsidy award</h2>
+            <p class="govuk-body">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <h2 class="govuk-heading-l">Content heading 2</h2>
+            <p class="govuk-body">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <hr />
+          </div>
+    
+          <div class="govuk-grid-column-one-third">
+            <hr />
+            <h3 class="govuk-heading-m">Related content</h3>
+            <a href="#" class="govuk-label">Content heading 3</a>
+            <br />
+            <a href="#" class="govuk-label">Content heading 4</a>
+          </div>
+        </div>
+        <form action="/subsidymeasuretitle" method="POST" novalidate="">
+        <div>
+          
+          <form action="/subsidymeasuretitle" method="POST" >
+            <button class="govuk-button" data-module="govuk-button">
+              Search subsidy awards
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg></a>
+           </button>
+        </div>
+       </form>
+
+      </main>
+    </div>
+
+      <%- include('../partials/footer.ejs') %>
+
+</html>
+    
